@@ -9,41 +9,23 @@
 
 
 import React, { useState } from 'react';
-
-// const Friends = () => {
-
-//     fetch('https://my.api.mockaroo.com/my_saved_schema.json?key=73b78ca0')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-
-//     const [name, setName] = useState();
-        
-
-//     return (
-//         <div>
-//             <h1>{name.length}</h1>
-//         </div>
-//     );
-// };
+import fakeData from '../../fakeData';
+import './Friends.css';
+import People from '../People/People';
 
 const Friends = () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(data => {showData(data)});
-
-    function showData(data){
-        console.log(data);
-        let userHTML = ' ';
-
-        data.forEach(user => {
-            userHTML = userHTML + `<div>${user.name} </div>`
-
-        });
-        
-    }
+    const first10 = fakeData.slice(0, 20);
+    const [users, setUser] = useState(first10);
     return (
-        <div>
-            
+        <div className = "user-container">
+            <div className="people-container">
+                {
+                    users.map(user => <People people = {user}></People>)
+                }
+            </div>
+            <div className="summary-container">
+                <h3>This is summary</h3>
+            </div>
         </div>
     );
 };
