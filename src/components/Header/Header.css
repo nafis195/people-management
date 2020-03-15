@@ -1,0 +1,38 @@
+/*
+Bismillahir Rahmanir Rahim
+Nafis Chowdhury
+People Management Project
+Header.css
+03/14/2020
+*/
+
+
+
+
+
+.header img{
+    height: 60px;
+    flex: auto;
+}
+
+.header{
+    text-align: center;
+}
+
+.header nav{
+    background-color: black;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+nav a:hover{
+    background-color: gray;
+}
