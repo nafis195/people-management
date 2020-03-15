@@ -2,11 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
+import Friends from './components/Friends/Friends';
 
 function App() {
   return (
     <div>
       <Header></Header>
+      <Friends></Friends>
     </div>
   );
 }
