@@ -12,13 +12,16 @@ import React, { useState } from 'react';
 import fakeData from '../../fakeData';
 import './Friends.css';
 import People from '../People/People';
+import Summary from '../Summary/Summary';
 
 const Friends = () => {
     const first10 = fakeData.slice(0, 20);
     const [users, setUser] = useState(first10);
+    const [summary, setSummary] = useState([]);
 
     const handleAddUser = (people) => {
-        console.log("people added", people);
+        const newSummary = [...summary, people];
+        setSummary(newSummary);
     }
 
     return (
@@ -32,7 +35,7 @@ const Friends = () => {
                 }
             </div>
             <div className="summary-container">
-                <h3>This is summary</h3>
+                <Summary summary = {summary}></Summary>
             </div>
         </div>
     );
