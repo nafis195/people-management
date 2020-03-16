@@ -16,11 +16,19 @@ import People from '../People/People';
 const Friends = () => {
     const first10 = fakeData.slice(0, 20);
     const [users, setUser] = useState(first10);
+
+    const handleAddUser = (people) => {
+        console.log("people added", people);
+    }
+
     return (
         <div className = "user-container">
             <div className="people-container">
                 {
-                    users.map(user => <People people = {user}></People>)
+                    users.map(user => <People 
+                        handleAddUser = {handleAddUser}
+                        people = {user}>
+                        </People>)
                 }
             </div>
             <div className="summary-container">

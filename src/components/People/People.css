@@ -29,3 +29,12 @@ People.css
 .people-div{
     margin-left: 100px;
 }
+
+.add-btn{
+    background-color: slateblue;
+    width: 100px;
+    height: 30px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    color: white;
+}

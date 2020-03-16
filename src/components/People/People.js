@@ -9,10 +9,13 @@
 
 
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import './People.css';
 
 const People = (props) => {
-    console.log(props.people.fullname);
+    //console.log(props);
+
     const { img, fullname, email, phone, salary } = props.people;
     return (
         <div className="people">
@@ -24,6 +27,10 @@ const People = (props) => {
                 <h5>Email: {email}</h5>
                 <h5>Phone: {phone}</h5>
                 <h5>Salary: ${salary}</h5>
+                <button 
+                    className = "add-btn" onClick = {() => props.handleAddUser(props.people)}> 
+                    <FontAwesomeIcon icon={faUser} /> Add Me
+                </button>
             </div>
         </div>
     );
